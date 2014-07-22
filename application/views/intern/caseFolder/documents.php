@@ -764,71 +764,35 @@
                     </div>
                     <div class="modal-body" style="max-height:300px; overflow: scroll;">
 
-                        <table class="table table-condensed datatable">
+                        <table id="legaldocument" class="table table-condensed datatable">
                             <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Date Filed/Date Issued</th>
+                                    <th>Date Filed/Date Received</th>
                                     <th></th>
                                 </tr>
                             </thead>   
                             <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <a href="" class="btn btn-info" title="Download" data-rel="tooltip"><i class="icon-download"></i></a>  <a href="" class="btn btn-danger" title="Delete" data-rel="tooltip"> <i class="icon-trash"></i> </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <a href="" class="btn btn-info" title="Download" data-rel="tooltip"><i class="icon-download"></i></a>  <a href="" class="btn btn-danger" title="Delete" data-rel="tooltip"> <i class="icon-trash"></i> </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <a href="" class="btn btn-info" title="Download" data-rel="tooltip"><i class="icon-download"></i></a>  <a href="" class="btn btn-danger" title="Delete" data-rel="tooltip"> <i class="icon-trash"></i> </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <a href="" class="btn btn-info" title="Download" data-rel="tooltip"><i class="icon-download"></i></a>  <a href="" class="btn btn-danger" title="Delete" data-rel="tooltip"> <i class="icon-trash"></i> </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <a href="" class="btn btn-info" title="Download" data-rel="tooltip"><i class="icon-download"></i></a>  <a href="" class="btn btn-danger" title="Delete" data-rel="tooltip"> <i class="icon-trash"></i> </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <a href="" class="btn btn-info" title="Download" data-rel="tooltip"><i class="icon-download"></i></a>  <a href="" class="btn btn-danger" title="Delete" data-rel="tooltip"> <i class="icon-trash"></i> </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <a href="" class="btn btn-info" title="Download" data-rel="tooltip"><i class="icon-download"></i></a>  <a href="" class="btn btn-danger" title="Delete" data-rel="tooltip"> <i class="icon-trash"></i> </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <a href="" class="btn btn-info" title="Download" data-rel="tooltip"><i class="icon-download"></i></a>  <a href="" class="btn btn-danger" title="Delete" data-rel="tooltip"> <i class="icon-trash"></i> </a>
-                                    </td>
-                                </tr>
+                                <?php foreach ($alldocuments as $document): ?>
+                                    <tr>
+                                        <td><?php echo $document->file_name; ?></td>
+                                        <td>
+                                            <?php
+                                            if ($document->datefiled == NULL) {
+                                                $datereceived = DateTime::createFromFormat("Y-m-d H:i:s", $document->datereceived);
+                                                echo $datereceived->format("F d, Y");
+                                            } else {
+                                                $datefiled = DateTime::createFromFormat("Y-m-d", $document->datefiled);
+                                                echo $datefiled->format("F d, Y");
+                                            }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <a href="<?php echo base_url() . 'cases/downloadNow/' . $case->caseID . '/' . $document->documentID ?>" class="btn btn-info" title="Download" data-rel="tooltip"><i class="icon-download"></i></a> 
+                                            <a href="" class="btn btn-danger" title="Delete" data-rel="tooltip"> <i class="icon-trash"></i> </a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
                             </tbody>
                         </table> 
 

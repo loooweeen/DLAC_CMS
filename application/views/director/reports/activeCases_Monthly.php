@@ -15,7 +15,6 @@
         <table class="table table-striped table-bordered datatable" id="dashboard-cases" data-provides="rowlink">
             <thead>
                 <tr>
-                    <th>Day</th>
                     <th>Title</th>
                     <th>(Life) Span</th>
                     <th>Offense</th>
@@ -25,12 +24,6 @@
             <tbody>
                 <?php foreach ($case as $row): ?>
                     <tr>
-                        <td>
-                            <?php
-                            $date = DateTime::createFromFormat("Y-m-d H:i:s", $row->appDateSubmitted);
-                            echo $date->format("d");
-                            ?>
-                        </td>
                         <td><?php echo $row->caseName; ?></td>
                         <td><?php echo $row->lifespan . ' days'; ?></td>
                         <td>

@@ -1,18 +1,18 @@
 <div class="container" style="margin-top:10px;">
-    
-          <div class="pull-right">
-          
-     <a class ="btn btn-medium btn-info" style='margin-bottom: 10px' href="#chooseDocTemplateModal" data-toggle="modal">
-      <i class="icon-download"></i>&nbsp;Document Template
-    </a>
-      
-     <a class ="btn btn-medium btn-success" style='margin-bottom: 10px' href="#showAllDocumentsModal" data-toggle="modal">
-      <i class="icon-briefcase"></i>&nbsp;Show All Documents
-    </a>    
-      </div>
+
+    <div class="pull-right">
+
+        <a class ="btn btn-medium btn-info" style='margin-bottom: 10px' href="#chooseDocTemplateModal" data-toggle="modal">
+            <i class="icon-download"></i>&nbsp;Document Template
+        </a>
+
+        <a class ="btn btn-medium btn-success" style='margin-bottom: 10px' href="#showAllDocumentsModal" data-toggle="modal">
+            <i class="icon-briefcase"></i>&nbsp;Show All Documents
+        </a>    
+    </div>
 
     <?php echo form_open(base_url() . 'caseFolder/documents', array('class' => 'form-horizontal')); ?>
-    
+
 
     <div class="row">
 
@@ -1208,14 +1208,14 @@
                                     <div class="dropzone" style='margin:0px 20px 0px 20px'>
                                         <div class="fallback">
                                             <input type="hidden" name="caseid" value="<?php echo $case->caseID ?>">
-                                        <input id='documentid' type="hidden" name='documentid' value=0 />
-                                        <input name="revisionfile" type="file"/>
+                                            <input id='documentid' type="hidden" name='documentid' value=0 />
+                                            <input name="revisionfile" type="file"/>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div> 
-                        
+
                     </div>
                     <div class="modal-footer">
                         <input type="submit" class="btn btn-success" value="Upload">
@@ -1227,95 +1227,59 @@
         </div>
 
     </div> 
-    
+
     <div class="row">
-    <div class="modal fade" id="showAllDocumentsModal">
-      <div class="modal-dialog-documents">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title">All Documents</h4>
-          </div>
-          <div class="modal-body" style="max-height:300px; overflow: scroll;">
-            
-            <table class="table table-condensed datatable">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Date Filed/Date Issued</th>
-              <th></th>
-            </tr>
-          </thead>   
-          <tbody>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>
-                  <a href="" class="btn btn-info" title="Download" data-rel="tooltip"><i class="icon-download"></i></a>  <a href="" class="btn btn-danger" title="Delete" data-rel="tooltip"> <i class="icon-trash"></i> </a>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>
-                  <a href="" class="btn btn-info" title="Download" data-rel="tooltip"><i class="icon-download"></i></a>  <a href="" class="btn btn-danger" title="Delete" data-rel="tooltip"> <i class="icon-trash"></i> </a>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>
-                  <a href="" class="btn btn-info" title="Download" data-rel="tooltip"><i class="icon-download"></i></a>  <a href="" class="btn btn-danger" title="Delete" data-rel="tooltip"> <i class="icon-trash"></i> </a>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>
-                  <a href="" class="btn btn-info" title="Download" data-rel="tooltip"><i class="icon-download"></i></a>  <a href="" class="btn btn-danger" title="Delete" data-rel="tooltip"> <i class="icon-trash"></i> </a>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>
-                  <a href="" class="btn btn-info" title="Download" data-rel="tooltip"><i class="icon-download"></i></a>  <a href="" class="btn btn-danger" title="Delete" data-rel="tooltip"> <i class="icon-trash"></i> </a>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>
-                  <a href="" class="btn btn-info" title="Download" data-rel="tooltip"><i class="icon-download"></i></a>  <a href="" class="btn btn-danger" title="Delete" data-rel="tooltip"> <i class="icon-trash"></i> </a>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>
-                  <a href="" class="btn btn-info" title="Download" data-rel="tooltip"><i class="icon-download"></i></a>  <a href="" class="btn btn-danger" title="Delete" data-rel="tooltip"> <i class="icon-trash"></i> </a>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>
-                  <a href="" class="btn btn-info" title="Download" data-rel="tooltip"><i class="icon-download"></i></a>  <a href="" class="btn btn-danger" title="Delete" data-rel="tooltip"> <i class="icon-trash"></i> </a>
-                </td>
-              </tr>
-          </tbody>
-        </table> 
+        <div class="modal fade" id="showAllDocumentsModal">
+            <div class="modal-dialog-documents">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">All Documents</h4>
+                    </div>
+                    <div class="modal-body" style="max-height:300px; overflow: scroll;">
 
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-          <?php echo form_close(); ?>
+                        <table class="table table-condensed datatable">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Date Filed/Date Received</th>
+                                    <th></th>
+                                </tr>
+                            </thead>   
+                            <tbody>
+                                <?php foreach ($alldocuments as $document): ?>
+                                    <tr>
+                                        <td><?php echo $document->file_name; ?></td>
+                                        <td>
+                                            <?php
+                                            if ($document->datefiled == NULL) {
+                                                $datereceived = DateTime::createFromFormat("Y-m-d H:i:s", $document->datereceived);
+                                                echo $datereceived->format("F d, Y");
+                                            } else {
+                                                $datefiled = DateTime::createFromFormat("Y-m-d", $document->datefiled);
+                                                echo $datefiled->format("F d, Y");
+                                            }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <a href="<?php echo base_url() . 'cases/downloadNow/' . $case->caseID . '/' . $document->documentID ?>" class="btn btn-info" title="Download" data-rel="tooltip"><i class="icon-download"></i></a> 
+                                            <a href="" class="btn btn-danger" title="Delete" data-rel="tooltip"> <i class="icon-trash"></i> </a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table> 
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                    <?php echo form_close(); ?>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-  </div>
+    </div>
 
 
 </div>

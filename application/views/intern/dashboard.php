@@ -184,7 +184,10 @@
                             <?php foreach ($IDtasks as $task): ?>
                                 <tr>
                                     <td>
-                                        <?php echo $task->dateDue; ?>
+                                        <?php
+                                        $date = DateTime::createFromFormat("Y-m-d H:i:s", $task->dateDue);
+                                        echo $date->format("M d, Y");
+                                        ?>
                                     </td>
                                     <td>
                                         <?php echo $task->task; ?>
@@ -196,7 +199,7 @@
                                     <td>
                                         <?php
                                         $date = DateTime::createFromFormat("Y-m-d H:i:s", $document->datereceived);
-                                        date_add($date,date_interval_create_from_date_string("14 days"));
+                                        date_add($date, date_interval_create_from_date_string("14 days"));
                                         echo $date->format("M d, Y");
                                         ?>
                                     </td>

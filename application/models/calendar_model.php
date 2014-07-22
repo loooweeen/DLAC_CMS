@@ -20,17 +20,20 @@ class Calendar_model extends CI_Model {
     function select_schedulenow($uid) {
         $utype = $this->People_model->getuserfield('type', $uid);
 
-        if ($utype == 1) {
-            $query = $this->db->query("SELECT *
-			FROM `schedule`
-			WHERE `date` = CURDATE()");
-        } else {
-            $query = $this->db->query("SELECT *
+        /* SHOW ALL DATE FOR DIRECTOR AND SECRETARY
+         *  if ($utype == 1) {
+          $query = $this->db->query("SELECT *
+          FROM `schedule`
+          WHERE `date` = CURDATE()");
+          } else {
+                CODES FOR NON DIRECTOR AND SECRETARY
+          } */
+        $query = $this->db->query("SELECT *
 			FROM `schedule`
 			JOIN schedule_attendee ON `schedule`.scheduleID = schedule_attendee.scheduleID
 			WHERE userID = $uid
 			AND `date` = CURDATE()");
-        }
+
 
         return $query->result();
     }

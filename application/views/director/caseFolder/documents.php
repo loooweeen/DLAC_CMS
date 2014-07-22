@@ -1,108 +1,108 @@
 <div class="container">
-       
+
     <div class="pull-right">
-          
-     <a class ="btn btn-medium btn-info" style='margin-bottom: 10px' href="#chooseDocTemplateModal" data-toggle="modal">
-      <i class="icon-download"></i>&nbsp;Document Template
-    </a>
-      
-     <a class ="btn btn-medium btn-success" style='margin-bottom: 10px' href="#showAllDocumentsModal" data-toggle="modal">
-      <i class="icon-briefcase"></i>&nbsp;Show All Documents
-    </a>    
-      </div>
+
+        <a class ="btn btn-medium btn-info" style='margin-bottom: 10px' href="#chooseDocTemplateModal" data-toggle="modal">
+            <i class="icon-download"></i>&nbsp;Document Template
+        </a>
+
+        <a class ="btn btn-medium btn-success" style='margin-bottom: 10px' href="#showAllDocumentsModal" data-toggle="modal">
+            <i class="icon-briefcase"></i>&nbsp;Show All Documents
+        </a>    
+    </div>
 
 
-        <!--START OF chooseDocTemplate modal -->
+    <!--START OF chooseDocTemplate modal -->
 
-        <div class="row">
+    <div class="row">
 
-            <div class="modal fade" id="chooseDocTemplateModal">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 class="modal-title">Legal Document Templates</h4>
-                        </div>
-                        <div class="modal-body" style="height:300px; overflow:scroll;">
+        <div class="modal fade" id="chooseDocTemplateModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Legal Document Templates</h4>
+                    </div>
+                    <div class="modal-body" style="height:300px; overflow:scroll;">
 
-                            <h5></h5>
+                        <h5></h5>
 
-                            <table class="table table-condensed">
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Size</th>
-                                    <th>  </th>
-                                </tr>
-                                <tr>
-                                    <td> <h5> Complaint Affidavit</h5></td>
-                                    <td> 8.9KB</td>
-                                    <td><a href="<?php echo base_url() . 'cases/ComplaintAffidavit/' . $case->caseID ?>" class="btn btn-success"><i class="icon-download"></i> </a></td>
-                                </tr>
-                                <tr>
-                                    <td><h5>Motion to Bail</h5></td>
-                                    <td> 9.1KB</td>
-                                    <td><a href="<?php echo base_url() . 'cases/MotionToBail' ?>" class="btn btn-success"><i class="icon-download"></i> </a></td>
-                                </tr>
-                                <tr>
-                                    <td><h5>Petition for Bail</h5></td>
-                                    <td>8.9KB</td>
-                                    <td><a href="<?php echo base_url() . 'cases/PetitionForBail' ?>" class="btn btn-success"><i class="icon-download"></i> </a></td>
-                                </tr>
-                                <tr>
-                                    <td><h5>Pre-Trial Brief</h5></td>
-                                    <td>8.6KB</td>
-                                    <td><a href="<?php echo base_url() . 'cases/PreTrialBrief' ?>" class="btn btn-success"><i class="icon-download"></i> </a></td>
-                                </tr>
-                                <tr>
-                                    <td><h5>Manifestation</h5></td>
-                                    <td>8.8KB</td>
-                                    <td><a href="<?php echo base_url() . 'cases/Manifestation' ?>" class="btn btn-success"><i class="icon-download"></i> </a></td>
-                                </tr>
-                                <tr>
-                                    <td><h5>Formal Entry of Appearance</h5></td>
-                                    <td>8.6KB</td>
-                                    <td><a href="<?php echo base_url() . 'cases/FormalEntryOfAppearance' ?>" class="btn btn-success"><i class="icon-download"></i> </a></td>
-                                </tr>
-                                <tr>
-                                    <td><h5>Judicial Affidavit</h5></td>
-                                    <td>9.0KB</td>
-                                    <td><a href="<?php echo base_url() . 'cases/JudicialAffidavit' ?>" class="btn btn-success"><i class="icon-download"></i> </a></td>
-                                </tr>
-                                <tr>
-                                    <td><h5>Offer of Evidence</h5></td>
-                                    <td>8.6KB</td>
-                                    <td><a href="<?php echo base_url() . 'cases/OfferOfEvidence' ?>" class="btn btn-success"><i class="icon-download"></i> </a></td>
-                                </tr>
-                                <tr>
-                                    <td><h5>Notice of Appeal</h5></td>
-                                    <td>8.8KB</td>
-                                    <td><a href="<?php echo base_url() . 'cases/NoticeOfAppeal' ?>" class="btn btn-success"><i class="icon-download"></i> </a></td>
-                                </tr>
-                                <tr>
-                                    <td><h5>Trial Memorandum</h5></td>
-                                    <td>8.7KB</td>
-                                    <td><a href="<?php echo base_url() . 'cases/TrialMemorandum' ?>" class="btn btn-success"><i class="icon-download"></i> </a></td>
-                                </tr>
-                                <tr>
-                                    <td><h5>Motion to Quash</h5></td>
-                                    <td>8.8KB</td>
-                                    <td><a href="<?php echo base_url() . 'cases/MotionToQuash' ?>" class="btn btn-success"><i class="icon-download"></i> </a></td>
-                                </tr>
+                        <table class="table table-condensed">
+                            <tr>
+                                <th>Name</th>
+                                <th>Size</th>
+                                <th>  </th>
+                            </tr>
+                            <tr>
+                                <td> <h5> Complaint Affidavit</h5></td>
+                                <td> 8.9KB</td>
+                                <td><a href="<?php echo base_url() . 'cases/ComplaintAffidavit/' . $case->caseID ?>" class="btn btn-success"><i class="icon-download"></i> </a></td>
+                            </tr>
+                            <tr>
+                                <td><h5>Motion to Bail</h5></td>
+                                <td> 9.1KB</td>
+                                <td><a href="<?php echo base_url() . 'cases/MotionToBail' ?>" class="btn btn-success"><i class="icon-download"></i> </a></td>
+                            </tr>
+                            <tr>
+                                <td><h5>Petition for Bail</h5></td>
+                                <td>8.9KB</td>
+                                <td><a href="<?php echo base_url() . 'cases/PetitionForBail' ?>" class="btn btn-success"><i class="icon-download"></i> </a></td>
+                            </tr>
+                            <tr>
+                                <td><h5>Pre-Trial Brief</h5></td>
+                                <td>8.6KB</td>
+                                <td><a href="<?php echo base_url() . 'cases/PreTrialBrief' ?>" class="btn btn-success"><i class="icon-download"></i> </a></td>
+                            </tr>
+                            <tr>
+                                <td><h5>Manifestation</h5></td>
+                                <td>8.8KB</td>
+                                <td><a href="<?php echo base_url() . 'cases/Manifestation' ?>" class="btn btn-success"><i class="icon-download"></i> </a></td>
+                            </tr>
+                            <tr>
+                                <td><h5>Formal Entry of Appearance</h5></td>
+                                <td>8.6KB</td>
+                                <td><a href="<?php echo base_url() . 'cases/FormalEntryOfAppearance' ?>" class="btn btn-success"><i class="icon-download"></i> </a></td>
+                            </tr>
+                            <tr>
+                                <td><h5>Judicial Affidavit</h5></td>
+                                <td>9.0KB</td>
+                                <td><a href="<?php echo base_url() . 'cases/JudicialAffidavit' ?>" class="btn btn-success"><i class="icon-download"></i> </a></td>
+                            </tr>
+                            <tr>
+                                <td><h5>Offer of Evidence</h5></td>
+                                <td>8.6KB</td>
+                                <td><a href="<?php echo base_url() . 'cases/OfferOfEvidence' ?>" class="btn btn-success"><i class="icon-download"></i> </a></td>
+                            </tr>
+                            <tr>
+                                <td><h5>Notice of Appeal</h5></td>
+                                <td>8.8KB</td>
+                                <td><a href="<?php echo base_url() . 'cases/NoticeOfAppeal' ?>" class="btn btn-success"><i class="icon-download"></i> </a></td>
+                            </tr>
+                            <tr>
+                                <td><h5>Trial Memorandum</h5></td>
+                                <td>8.7KB</td>
+                                <td><a href="<?php echo base_url() . 'cases/TrialMemorandum' ?>" class="btn btn-success"><i class="icon-download"></i> </a></td>
+                            </tr>
+                            <tr>
+                                <td><h5>Motion to Quash</h5></td>
+                                <td>8.8KB</td>
+                                <td><a href="<?php echo base_url() . 'cases/MotionToQuash' ?>" class="btn btn-success"><i class="icon-download"></i> </a></td>
+                            </tr>
 
 
-                            </table>
+                        </table>
 
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
-                    </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-            </div><!-- /.modal -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
 
-        </div>
+    </div>
 
-        <!--END OF chooseDocTemplate modal -->
+    <!--END OF chooseDocTemplate modal -->
 
     <!-- START OF DRAFTS TABLE & MODAL -->
 
@@ -729,95 +729,59 @@
         </div>
 
     </div> 
-    
+
     <div class="row">
-    <div class="modal fade" id="showAllDocumentsModal">
-      <div class="modal-dialog-documents">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title">All Documents</h4>
-          </div>
-          <div class="modal-body" style="max-height:300px; overflow: scroll;">
-            
-            <table class="table table-condensed datatable">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Date Filed/Date Issued</th>
-              <th></th>
-            </tr>
-          </thead>   
-          <tbody>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>
-                  <a href="" class="btn btn-info" title="Download" data-rel="tooltip"><i class="icon-download"></i></a>  <a href="" class="btn btn-danger" title="Delete" data-rel="tooltip"> <i class="icon-trash"></i> </a>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>
-                  <a href="" class="btn btn-info" title="Download" data-rel="tooltip"><i class="icon-download"></i></a>  <a href="" class="btn btn-danger" title="Delete" data-rel="tooltip"> <i class="icon-trash"></i> </a>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>
-                  <a href="" class="btn btn-info" title="Download" data-rel="tooltip"><i class="icon-download"></i></a>  <a href="" class="btn btn-danger" title="Delete" data-rel="tooltip"> <i class="icon-trash"></i> </a>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>
-                  <a href="" class="btn btn-info" title="Download" data-rel="tooltip"><i class="icon-download"></i></a>  <a href="" class="btn btn-danger" title="Delete" data-rel="tooltip"> <i class="icon-trash"></i> </a>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>
-                  <a href="" class="btn btn-info" title="Download" data-rel="tooltip"><i class="icon-download"></i></a>  <a href="" class="btn btn-danger" title="Delete" data-rel="tooltip"> <i class="icon-trash"></i> </a>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>
-                  <a href="" class="btn btn-info" title="Download" data-rel="tooltip"><i class="icon-download"></i></a>  <a href="" class="btn btn-danger" title="Delete" data-rel="tooltip"> <i class="icon-trash"></i> </a>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>
-                  <a href="" class="btn btn-info" title="Download" data-rel="tooltip"><i class="icon-download"></i></a>  <a href="" class="btn btn-danger" title="Delete" data-rel="tooltip"> <i class="icon-trash"></i> </a>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>
-                  <a href="" class="btn btn-info" title="Download" data-rel="tooltip"><i class="icon-download"></i></a>  <a href="" class="btn btn-danger" title="Delete" data-rel="tooltip"> <i class="icon-trash"></i> </a>
-                </td>
-              </tr>
-          </tbody>
-        </table> 
+        <div class="modal fade" id="showAllDocumentsModal">
+            <div class="modal-dialog-documents">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">All Documents</h4>
+                    </div>
+                    <div class="modal-body" style="max-height:300px; overflow: scroll;">
 
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-          <?php echo form_close(); ?>
+                        <table class="table table-condensed datatable">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Date Filed/Date Received</th>
+                                    <th></th>
+                                </tr>
+                            </thead>   
+                            <tbody>
+                                <?php foreach ($alldocuments as $document): ?>
+                                    <tr>
+                                        <td><?php echo $document->file_name; ?></td>
+                                        <td>
+                                            <?php
+                                            if ($document->datefiled == NULL) {
+                                                $datereceived = DateTime::createFromFormat("Y-m-d H:i:s", $document->datereceived);
+                                                echo $datereceived->format("F d, Y");
+                                            } else {
+                                                $datefiled = DateTime::createFromFormat("Y-m-d", $document->datefiled);
+                                                echo $datefiled->format("F d, Y");
+                                            }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <a href="<?php echo base_url() . 'cases/downloadNow/' . $case->caseID . '/' . $document->documentID ?>" class="btn btn-info" title="Download" data-rel="tooltip"><i class="icon-download"></i></a> 
+                                            <a href="" class="btn btn-danger" title="Delete" data-rel="tooltip"> <i class="icon-trash"></i> </a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table> 
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                    <?php echo form_close(); ?>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-  </div>
+    </div>
 
 
 </div>

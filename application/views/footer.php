@@ -230,7 +230,7 @@
             "sDom": 'tipr',
             "iDisplayLength": 4,
             "bDestroy": true,
-            "aaSorting": [[0, "desc"]]
+            "aaSorting": [[0, "asc"]]
         });
         $("#dashboard-tasks").dataTable({
             "sDom": 'tipr',
@@ -276,6 +276,9 @@
         $('#casestable').dataTable({
             "aaSorting": [[3, "desc"]]
         });
+
+
+
         // Fix datatables pagination in dashboard
         var segment = "<?php echo $this->uri->segment(1) ?>";
         if (segment == 'dashboard') {
@@ -960,7 +963,7 @@
 
     $('#newappt_case').change(function() {
         var cid = $('select[name="newappt_case"]').val();
-        
+
         $.ajax({
             type: "POST",
             url: "<?php echo base_url() ?>calendar/change_client/" + cid,
@@ -1267,7 +1270,7 @@
                         + "</div>"
                         + "</td>"
                         + "</tr>"
-                
+
                         + "<tr>"
                         + "<td>Date Received:</td>"
                         + "<td class='col-sm-3'>"

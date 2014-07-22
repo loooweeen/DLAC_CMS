@@ -296,7 +296,7 @@
                 <div class="box-content box-dashboard">
 
                     <br>
-                    <table class="table table-striped table-bordered datatable" id="dashboard-drafts" data-provides="rowlink">
+                    <table class="table table-striped table-bordered datatable" id="dashboard-cases" data-provides="rowlink">
                         <thead>
                             <tr>
                                 <th>No.</th>
@@ -311,7 +311,12 @@
                                 <tr>
                                     <td class="center"><a href="cases/caseFolder/<?php echo $row->caseID ?>"><?php echo $row->caseNum ?></a></td>
                                     <td class="center"><?php echo $row->caseName ?></td>
-                                    <td class="center"><?php echo $row->dateReceived ?></td>
+                                    <td class="center">
+                                        <?php
+                                        $date = DateTime::createFromFormat("Y-m-d H:i:s", $row->dateReceived);
+                                        echo $date->format("F d, Y");
+                                        ?>
+                                    </td>
                                     <td class="center"><?php echo $row->offense ?></td>
                                     <td class="center"><?php echo "$row->firstname $row->lastname" ?></td>
                                 </tr>

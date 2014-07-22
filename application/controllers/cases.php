@@ -332,6 +332,7 @@ class Cases extends CI_Controller {
         $data['byclient'] = $this->Case_model->select_casedocuments($cid, 2);
         $data['byopposing'] = $this->Case_model->select_casedocuments($cid, 3);
         $data['bycourt'] = $this->Case_model->select_casedocuments($cid, 4);
+        $data['alldocuments'] = $this->Case_model->select_all_documents($cid);
         // </editor-fold>
         // <editor-fold defaultstate="collapsed" desc="People">
         $data['caseclient'] = $this->Case_model->select_caseclient($cid);
@@ -898,7 +899,7 @@ class Cases extends CI_Controller {
                     'dateReceived' => $datereceivedcourt[$count],
                     'dateIssued' => $dateissuedcourt[$count],
                     'file_type' => $file['file_type'],
-                    'file_path' => $file['full_path'],
+                    'file_path ' => 'uploads/' . $file['file_name'], //$file['full_path'],
                     'file_name' => $docnamecourt[$count],
                     'file_ext' => $file['file_ext'],
                     'file_size' => $file['file_size'],
@@ -1300,7 +1301,7 @@ class Cases extends CI_Controller {
             $file = $this->upload->data();
             $changes = array(
                 'file_type' => $file['file_type'],
-                'file_path ' => $file['full_path'],
+                'file_path ' => 'uploads/' . $file['file_name'],
                 'file_ext' => $file['file_ext'],
                 'file_size' => $file['file_size'],
                 'status' => 'approved'

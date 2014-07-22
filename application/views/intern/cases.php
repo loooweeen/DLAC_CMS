@@ -52,7 +52,12 @@
                                     </tabletags>
                                     </td>
                                     <td><?php echo $row->statusName ?></td>
-                                    <td><?php echo $row->dateReceived ?></td>
+                                    <td>
+                                        <?php
+                                        $date = DateTime::createFromFormat("Y-m-d H:i:s", $row->dateReceived);
+                                        echo $date->format("F d, Y");
+                                        ?>
+                                    </td>
                                     <td><?php echo $row->firstname . ' ' . $row->lastname ?></td>
                                     </tr>
                                 <?php endforeach; ?>
