@@ -13,11 +13,11 @@
                 <div class="box-content">
                     <div>Today is <?= $datenow ?>
                         <br><br>
-                        <a class="btn btn-default pull-right" style="background-color:#CBF7D7; margin-top:0px; margin-right:10px;" href="<?= base_url() ?>people/attendancelogs"> Create New Attendance Log</a>
+                        <a class="btn btn-default pull-right" style="background-color:#CBF7D7; margin-top:0px; margin-right:10px;" href="<?= base_url() ?>people/internmgt"> Create New Attendance Log</a>
                     </div>
 
                     <br><br><br>
-
+                    <?php echo form_open(base_url() . "people/attendanceLogs/", array('class' => 'form-horizontal')); ?>
                     <div class="col-sm-1 control-group" style="margin-left:40px;">
                         <div class="controls">
                             <h5> <b> Choose Date </b></h5>
@@ -38,13 +38,13 @@
                             <button class="btn btn-success btn-small" style="margin-top:0px;">View</button>
                         </div>        
                     </div>
+                    <?php echo form_close(); ?>
 
                     <br><br>
 
                     <hr>
 
                     <div id="attendanceLogAllInterns">
-
                         <table class="table table-striped table-bordered bootstrap-datatable datatable dataTable" id="DataTables_Table_0">
                             <thead>
                                 <tr>
@@ -105,7 +105,6 @@
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
-
                     </div>
 
                     <div class="hide" id="attendanceLogByDate">
@@ -113,10 +112,8 @@
                         <div style="background-color:#ECF8F0; padding:15px;">
 
                             <center>
-
-
                                 <h1>Attendance Log</h1>
-
+                                
                                 <div class="row">
 
                                     <div class="col-sm-1 control-group" style="margin-left:80px;">

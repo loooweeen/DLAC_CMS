@@ -101,15 +101,82 @@ class People extends CI_Controller {
     }
 
     function add($person) {
-        $this->People_model->insert_client($person);
+        $this->People_model->insert_person($person);
     }
 
-    function edit($pid) {
-        
+    function edit($pid, $person) {
+        $this->People_model->update_person($pid, $person);
     }
 
     function delete($pid) {
-        
+        $this->People_model->delete_person($pid);
+    }
+
+    function addlinkedpeople($cid) {
+
+        $datetimenow = date("Y-m-d H:i:s", now());
+
+        extract($_POST);
+        $pid = 0;
+        if ($pid == 0) { //dropdown from existing people is not set
+            $person = array(
+                'firstname' => $partyFirstName,
+                'middlename' => $partyMiddleName,
+                'lastname' => $partyLastName,
+                'addrhouse' => $partyAddressHouseNo,
+                'addrstreet' => $partyAddressStreet,
+                'addrtown' => $partyAddressTown,
+                'addrdistrict' => $partyAddressDistrict,
+                'addrpostalcode' => $partyAddressPostalCode,
+                'contacthome' => $partyCNHome,
+                'contactoffice' => $partyCNOffice,
+                'contactmobile' => $partyCNMobile
+            );
+            $this->add($person);
+            $pid = $this->db->insert_id();
+        }
+        else {
+            //$pid = $personID from dropdown
+        }
+
+        $data = array(
+            'caseID' => $cid,
+            'personID' => $pid,
+            'participation' => $partyParticipation,
+            'condition' => 'current',
+            'datestart' => $datetimenow
+        );
+        $this->Case_model->insert_caseperson($data);
+    }
+
+    function editlinkedpeople($pid) {
+        extract($_POST);
+
+        $person = array(
+            'firstname' => $partyFirstName,
+            'middlename' => $partyMiddleName,
+            'lastname' => $partyLastName,
+            'addrhouse' => $partyAddressHouseNo,
+            'addrstreet' => $partyAddressStreet,
+            'addrtown' => $partyAddressTown,
+            'addrdistrict' => $partyAddressDistrict,
+            'addrpostalcode' => $partyAddressPostalCode,
+            'contacthome' => $partyCNHome,
+            'contactoffice' => $partyCNOffice,
+            'contactmobile' => $partyCNMobile
+        );
+
+        $this->edit($pid, $person);
+    }
+
+    function deletelinkedpeople($cid, $pid) {
+        $datetimenow = date("Y-m-d H:i:s", now());
+
+        $changes = array(
+            'condition' => 'expired',
+            'dateend' => $datetimenow
+        );
+        $this->Case_model->update_caseperson($pid, $changes);
     }
 
     function newclient() {
@@ -165,52 +232,52 @@ class People extends CI_Controller {
 
         $clientid = $this->db->insert_id();
 
-    $clients = $this->session->userdata('clients');
-    array_push($clients, $clientid);
-    $this->session->set_userdata('clients', $clients);
+        $clients = $this->session->userdata('clients');
+        array_push($clients, $clientid);
+        $this->session->set_userdata('clients', $clients);
 
-    $data['clientlist'] = $this->People_model->externallist();
-    $data['addedclients'] = $this->session->userdata('clients');
-    $this->load->view('intern/createApplication/divclients', $data);
+        $data['clientlist'] = $this->People_model->externallist();
+        $data['addedclients'] = $this->session->userdata('clients');
+        $this->load->view('intern/createApplication/divclients', $data);
     }
 
-  function changeopposing() {
-    $data['addedclients'] = $this->session->userdata('clients');
-    $data['addedopposing'] = $this->session->userdata('opposingparties');
-    $data['opposingpartylist'] = $this->People_model->externallist();
-    $this->load->view('intern/createApplication/divopposingparty', $data);
-  }
+    function changeopposing() {
+        $data['addedclients'] = $this->session->userdata('clients');
+        $data['addedopposing'] = $this->session->userdata('opposingparties');
+        $data['opposingpartylist'] = $this->People_model->externallist();
+        $this->load->view('intern/createApplication/divopposingparty', $data);
+    }
 
-  function addnewopposingparty() {
-    extract($_POST);
-    $data = array(
-        'type' => 14, //14 = external
-        'lastname' => $partyLastName,
-        'firstname' => $partyFirstName,
-        'middlename' => $partyMiddleName,
-        'addrhouse' => $partyAddressHouseNo,
-        'addrstreet' => $partyAddressStreet,
-        'addrtown' => $partyAddressTown,
-        'addrdistrict' => $partyAddressDistrict,
-        'addrpostalcode' => $partyAddressPostalCode,
-        'contacthome' => $partyCNHome,
-        'contactoffice' => $partyCNOffice,
-        'contactmobile' => $partyCNMobile
-    );
+    function addnewopposingparty() {
+        extract($_POST);
+        $data = array(
+            'type' => 14, //14 = external
+            'lastname' => $partyLastName,
+            'firstname' => $partyFirstName,
+            'middlename' => $partyMiddleName,
+            'addrhouse' => $partyAddressHouseNo,
+            'addrstreet' => $partyAddressStreet,
+            'addrtown' => $partyAddressTown,
+            'addrdistrict' => $partyAddressDistrict,
+            'addrpostalcode' => $partyAddressPostalCode,
+            'contacthome' => $partyCNHome,
+            'contactoffice' => $partyCNOffice,
+            'contactmobile' => $partyCNMobile
+        );
 
-    $this->add($data);
+        $this->add($data);
 
-    $opposingID = $this->db->insert_id();
+        $opposingID = $this->db->insert_id();
 
-    $opposingparties = $this->session->userdata('opposingparties');
-    array_push($opposingparties, $opposingID);
-    $this->session->set_userdata('opposingparties', $opposingparties);
+        $opposingparties = $this->session->userdata('opposingparties');
+        array_push($opposingparties, $opposingID);
+        $this->session->set_userdata('opposingparties', $opposingparties);
 
-    $data['opposinglist'] = $this->People_model->externallist();
-    $data['addedopposing'] = $this->session->userdata('opposingparties');
-    $data['addedclients'] = $this->session->userdata('clients');
-    $this->load->view('intern/createApplication/divclients', $data);
-  }
+        $data['opposinglist'] = $this->People_model->externallist();
+        $data['addedopposing'] = $this->session->userdata('opposingparties');
+        $data['addedclients'] = $this->session->userdata('clients');
+        $this->load->view('intern/createApplication/divclients', $data);
+    }
 
     function addexternal() {
         $data = array(
@@ -246,11 +313,14 @@ class People extends CI_Controller {
         if (empty($uid)) {
             redirect('login/index');
         }
+        
+        
         $datestring = "%F %j, %Y";
         $datestring2 = "%Y-%m-%d";
         $time = now();
         $datenow = mdate($datestring, $time);
         $datenowdd = mdate($datestring2, $time);
+        
         extract($_POST);
         if (!isset($attendancelogdate)) {
             $data['residency'] = $this->People_model->select_all_residency();

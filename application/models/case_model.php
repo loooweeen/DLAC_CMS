@@ -485,6 +485,11 @@ class Case_model extends CI_Model {
         $this->db->insert('case_people', $data);
     }
 
+    function update_caseperson($pid, $changes) {
+        $this->db->where('personID', $pid);
+        $this->db->update('case_people', $changes);
+    }
+
     function apply_to_transfer($cid, $pid, $changes) {
         $this->db->where('caseID', $cid);
         $this->db->where('personID', $pid);

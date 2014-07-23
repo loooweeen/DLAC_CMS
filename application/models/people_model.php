@@ -74,10 +74,6 @@ class People_model extends CI_Model {
         return $query->result();
     }
 
-    function insert_client($data) {
-        $this->db->insert('people', $data);
-    }
-
     function update_client($pid, $data) {
         $this->db->where('personID', $pid);
         $this->db->update('people', $data);
@@ -126,7 +122,7 @@ class People_model extends CI_Model {
     }
 
     function select_external() {
-        $query = $this->db->query("SELECT * FROM externals");
+        $query = $this->db->query("SELECT * FROM externals GROUP BY personID");
         return $query->result();
     }
 
@@ -240,6 +236,20 @@ class People_model extends CI_Model {
     function matched_lawyers($offenseID) {
         $query = $this->db->query("SELECT * FROM `people_offense` JOIN `lawyers` ON (`lawyers`.`personID` = `people_offense`.`personID`) WHERE offenseID = $offenseID");
         return $query;
+    }
+
+    function insert_person($data) {
+        $this->db->insert('people', $data);
+    }
+
+    function delete_person($pid) {
+        $this->db->where('personID', $pid);
+        $this->db->delete('people');
+    }
+
+    function update_person($pid, $data) {
+        $this->db->where('personID', $pid);
+        $this->db->update('people', $data);
     }
 
     //</editor-fold>
